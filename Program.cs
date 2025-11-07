@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Metrics;
 
 class Polynomial
 {
@@ -28,10 +29,26 @@ class Polynomial
     }
 
     public override string ToString()
-???????????????????????????????????????????????????????????????????????????????????????
-        return "";
+    {
+        if (this.coeffs.Length == 0) { return "0"; }
+        string res = " ";
+        for (int i;= 0; i < this.coeffs.Length; i++)
+        {
+            if (this.coeffs[i] == 0) { continue; }
+            if (i == 0) { res += this.coeffs[i]; }
+            else i(i == 1){
+                res += this.coeffs[i] = 0 ? "-" : "+";
+                res += Math.Abs(this.coeffs[i]).ToString() + "x";
+            }
+            else {
+                res += this.coeffs[i] < 0 ? "-" : "+";
+                res += Math.Abs(this.coeffs[i]).ToString() + "x^" + i;
+            }
+            return res;
+        }
     }
 }
+    
 
 class Programm
 {
